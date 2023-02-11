@@ -4,24 +4,24 @@ using UnityEngine.UI;
 
 public class ResourceHolder : MonoBehaviour
 {
-    public Transform Transform { get; private set; }
-    public Image Image { get; private set; }
-    public TextMeshProUGUI Text { get; private set; }
+    private Transform localTransform;
+    private Image localImage;
+    private TextMeshProUGUI localText;
 
     private bool isHidden;
 
     private void Awake()
     {
-        Transform = GetComponent<Transform>();
-        Image = Transform.GetChild(0).GetComponent<Image>();
-        Text = Transform.GetChild(1).GetComponent<TextMeshProUGUI>();
-        isHidden = !Image.enabled;
+        localTransform = GetComponent<Transform>();
+        localImage = localTransform.GetChild(0).GetComponent<Image>();
+        localText = localTransform.GetChild(1).GetComponent<TextMeshProUGUI>();
+        isHidden = !localImage.enabled;
     }
 
     public void SetResourceHolder(WheelPiece piece)
     {
-        Image.sprite = piece.Icon;
-        Text.text = piece.Amount.ToString();
+        localImage.sprite = piece.Icon;
+        localText.text = piece.Amount.ToString();
     }
 
     public void SetResourceHolder(CommonMultiplyerInfo multiplyerInfo)
@@ -32,14 +32,14 @@ public class ResourceHolder : MonoBehaviour
         }
         else if(!isHidden)
         {            
-            Image.sprite = multiplyerInfo.baseInfo.Icon;
-            Text.text = multiplyerInfo.spinInfo.Spins.ToString() + "/" + multiplyerInfo.spinInfo.SpinsMax.ToString();
+            localImage.sprite = multiplyerInfo.baseInfo.Icon;
+            localText.text = multiplyerInfo.spinInfo.Spins.ToString() + "/" + multiplyerInfo.spinInfo.SpinsMax.ToString();
         }        
     }
 
     public void Hide(bool shouldHide)
     {
-        Image.enabled = Text.enabled = !shouldHide;
+        localImage.enabled = localText.enabled = !shouldHide;
         isHidden = shouldHide;
     }
 }

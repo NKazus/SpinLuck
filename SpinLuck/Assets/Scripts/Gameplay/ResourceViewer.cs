@@ -55,7 +55,6 @@ public class ResourceViewer : MonoBehaviour
 
     private void UpdateMultiplyerInfo(CommonMultiplyerInfo newInfo)
     {
-        Debug.Log("mult");
         multiplyer.SetResourceHolder(resourceManager.GetCurrentMultiplyer());
     }
 

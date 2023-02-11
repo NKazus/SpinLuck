@@ -36,7 +36,7 @@ public class AudioSettings : MonoBehaviour
 
     private void TurnMisic(bool isMusicOn)
     {
-        soundManager.TurnMisic(isMusicOn);
+        soundManager.TurnMusic(isMusicOn);
     }
 
     private void TurnVibro(bool isMusicOn)

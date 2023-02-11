@@ -64,7 +64,7 @@ public class SoundManager : MonoBehaviour
         mixerMasterGroup.audioMixer.SetFloat("_EffectsVolume", Mathf.Lerp(-80, 0, volumeValue));
     }
 
-    public void TurnMisic(bool isMusicOn)
+    public void TurnMusic(bool isMusicOn)
     {
         if (isMusicOn)
         {

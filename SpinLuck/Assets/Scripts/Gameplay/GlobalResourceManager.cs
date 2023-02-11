@@ -194,13 +194,7 @@ public class GlobalResourceManager : MonoBehaviour
         {
             winValue = piece.Amount;
         }
-        for (int i = 0; i < resourcesData.Count; i++) 
-        {
-            if(piece.Index == i)
-            {
-                resourcesData[i].Amount += winValue;
-            }
-        }
+        resourcesData[piece.Index].Amount += winValue;
         return winValue;
     }
     #endregion

@@ -41,7 +41,7 @@ public class DailyBonus : MonoBehaviour
             eventManager.UpdateMultiplyer(mult);
 
             int currentDayIndex = (int)DateTime.Now.DayOfWeek - 1;
-            if(currentDayIndex < bonus.days.Count)
+            if(currentDayIndex < bonus.days.Count && currentDayIndex >= 0)
             {
                 bonus.days[currentDayIndex] = true;
                 bonus.lastBonus = DateTime.Now;
