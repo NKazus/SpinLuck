@@ -6,18 +6,18 @@ public class SoundManager : MonoBehaviour
 {
     [SerializeField] private AudioMixerGroup mixerMasterGroup;
 
-    private AudioSource[] _audios;
-    private AudioSource _ambientMusic;
+    private AudioSource[] audios;
+    private AudioSource ambientMusic;
     private bool isVibroEnabled = true;
 
     private void Awake()
     {
-        _audios = gameObject.GetComponentsInChildren<AudioSource>();
-        foreach(AudioSource audio in _audios)
+        audios = gameObject.GetComponentsInChildren<AudioSource>();
+        foreach(AudioSource audio in audios)
         {
             switch (audio.gameObject.tag)
             {
-                case "Ambient": _ambientMusic = audio; _ambientMusic.loop = true; break;
+                case "Ambient": ambientMusic = audio; ambientMusic.loop = true; break;
                 default: throw new NotSupportedException();
             }
         }

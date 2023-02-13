@@ -99,7 +99,7 @@ public class BonusGame : MonoBehaviour
     private void CheckClicks()
     {
         TimeSpan span = DateTime.Now.Subtract(resourceManager.GetBonusGameTime());
-        int hours = span.Hours;
+        int hours = (int) span.TotalHours;
         if(hours < cooldown)
         {
             clickCount = 0;

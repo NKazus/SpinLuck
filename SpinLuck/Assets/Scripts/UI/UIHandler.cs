@@ -24,7 +24,7 @@ public class UIHandler : MonoBehaviour
 
     private void OnDisable()
     {
-        uiManager.ChangeStateEvent += SwitchState;
+        uiManager.ChangeStateEvent -= SwitchState;
     }
     #endregion
 

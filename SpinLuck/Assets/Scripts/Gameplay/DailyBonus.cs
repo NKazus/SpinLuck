@@ -92,7 +92,7 @@ public class DailyBonus : MonoBehaviour
     private void CheckDate()
     {
         TimeSpan span = DateTime.Now.Subtract(bonus.lastBonus);
-        int hours = span.Hours;
+        int hours = (int) span.TotalHours;
         isEnabled = (hours < cooldown) ? false : true;
     }
 
